@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
-    <element audit="true" extends="task" label="Bokning" max_length="40" name="x_459524_kalendern_booking" type="collection">
+    <element audit="true" extends="task" label="Bokning" max_length="40" name="x_459524_kalendern_booking" sizeclass="33" type="collection">
         <element label="K2" max_length="32" name="k2" reference="x_459524_kalendern_k2" type="reference"/>
     </element>
 </database>

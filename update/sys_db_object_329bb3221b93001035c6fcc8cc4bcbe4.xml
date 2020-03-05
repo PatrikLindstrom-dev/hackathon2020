@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_db_object">
     <sys_db_object action="INSERT_OR_UPDATE">
-        <access/>
+        <access>public</access>
         <actions_access>true</actions_access>
         <alter_access>true</alter_access>
         <caller_access/>
@@ -25,14 +25,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2020-03-05 13:06:37</sys_created_on>
         <sys_id>329bb3221b93001035c6fcc8cc4bcbe4</sys_id>
-        <sys_mod_count>0</sys_mod_count>
-        <sys_name>Kalendern K2</sys_name>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>K2</sys_name>
         <sys_package display_value="KalenderNow" source="x_459524_kalendern">f134bfe21b53001035c6fcc8cc4bcb1d</sys_package>
         <sys_policy/>
         <sys_scope display_value="KalenderNow">f134bfe21b53001035c6fcc8cc4bcb1d</sys_scope>
         <sys_update_name>sys_db_object_329bb3221b93001035c6fcc8cc4bcbe4</sys_update_name>
-        <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2020-03-05 13:06:37</sys_updated_on>
+        <sys_updated_by>waljon</sys_updated_by>
+        <sys_updated_on>2020-03-05 18:14:17</sys_updated_on>
         <update_access>true</update_access>
         <user_role/>
         <ws_access>true</ws_access>

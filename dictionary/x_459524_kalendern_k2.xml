@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?><database>
     <element label="K2" max_length="40" name="x_459524_kalendern_k2" type="collection">
         <element attributes="edge_encryption_enabled=true" label="Efternamn" max_length="40" name="efternamn" type="string"/>
-        <element attributes="edge_encryption_enabled=true" display="true" label="Förnamn" max_length="40" name="fornamn" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Förnamn" max_length="40" name="fornamn" type="string"/>
         <element attributes="encode_utf8=false" label="K1" max_length="32" name="k1" reference="core_company" type="reference"/>
+        <element calculation="if (current.fornamn.nil() &amp;&amp; current.efternamn.nil() &amp;&amp; !current.namn.nil()) {&#13;&#10;  var namns = current.namn.toString().split(&quot; &quot;);&#13;&#10;  if (namns.length &gt; 1) {&#13;&#10;    current.fornamn = namns[0];&#13;&#10;    namns.shift();&#13;&#10;    current.efternamn = namns.join(&quot; &quot;);&#13;&#10;  } else &#13;&#10;    current.efternamn = namns[0];&#13;&#10;}  &#13;&#10;&#13;&#10;if(current.fornamn.nil()) { &#13;&#10;    current.efternamn; &#13;&#10;  } else { &#13;&#10;    current.fornamn + ' ' + current.efternamn;&#13;&#10;  }" display="true" label="Namn" max_length="80" name="namn" type="string_full_utf8" virtual="true"/>
         <element attributes="edge_encryption_enabled=true" label="Personnummer" max_length="40" name="personnummer" type="string"/>
         <element attributes="edge_encryption_enabled=true" choice="1" label="Status" max_length="40" name="status" type="string">
             <choice>
