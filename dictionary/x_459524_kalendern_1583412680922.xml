@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element extends="sys_import_set_row" label="Kalendern 1583412680922" max_length="40" name="x_459524_kalendern_1583412680922" type="collection">
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Efternamn" label="Efternamn" max_length="40" name="u_efternamn" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Förnamn" max_length="40" name="u_förnamn" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=K1" label="K1" max_length="40" name="u_k1" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Personnummer" label="Personnummer" max_length="40" name="u_personnummer" type="string"/>
+        <element attributes="edge_encryption_enabled=true" label="Rådgivarmöte(ID)" max_length="40" name="u_rådgivarmöte_id_" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Status" label="Status" max_length="40" name="u_status" type="string"/>
+        <element attributes="edge_encryption_enabled=true,import_attribute_name=Telefonnummer" label="Telefonnummer" max_length="40" name="u_telefonnummer" type="string"/>
+    </element>
+</database>

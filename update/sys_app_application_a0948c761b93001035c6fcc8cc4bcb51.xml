@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_app_application">
+    <sys_app_application action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <category display_value="">Custom Applications</category>
+        <description>Framgångsrika K2 möten</description>
+        <device_type>browser</device_type>
+        <hint>Framgångsrika K2 möten</hint>
+        <name/>
+        <order/>
+        <roles>x_459524_kalendern.admin,x_459524_kalendern.advisor,x_459524_kalendern.manager</roles>
+        <sys_class_name>sys_app_application</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-05 13:45:47</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>a0948c761b93001035c6fcc8cc4bcb51</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>KalenderNow</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="KalenderNow" source="x_459524_kalendern">f134bfe21b53001035c6fcc8cc4bcb1d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="KalenderNow">f134bfe21b53001035c6fcc8cc4bcb1d</sys_scope>
+        <sys_update_name>sys_app_application_a0948c761b93001035c6fcc8cc4bcb51</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-05 13:45:47</sys_updated_on>
+        <title>KalenderNow</title>
+        <view_name/>
+    </sys_app_application>
+</record_update>

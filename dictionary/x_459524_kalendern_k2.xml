@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="K2" max_length="40" name="x_459524_kalendern_k2" type="collection">
+        <element attributes="edge_encryption_enabled=true" label="Efternamn" max_length="40" name="efternamn" type="string"/>
+        <element attributes="edge_encryption_enabled=true" display="true" label="Förnamn" max_length="40" name="fornamn" type="string"/>
+        <element attributes="encode_utf8=false" label="K1" max_length="32" name="k1" reference="core_company" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" label="Personnummer" max_length="40" name="personnummer" type="string"/>
+        <element attributes="edge_encryption_enabled=true" choice="1" label="Status" max_length="40" name="status" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Ej klar" value="10"/>
+                <element inactive_on_update="false" label="Klar" value="20"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="Telefonnummer" max_length="40" name="telefonnummer" type="string"/>
+        <index name="index">
+            <element name="k1"/>
+        </index>
+    </element>
+</database>
