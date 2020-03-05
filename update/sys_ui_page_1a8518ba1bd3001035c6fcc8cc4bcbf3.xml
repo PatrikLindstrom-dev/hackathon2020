@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ui_page">
+    <sys_ui_page action="INSERT_OR_UPDATE">
+        <category>general</category>
+        <client_script><![CDATA[var monthShortName = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+var Calendar = tui.Calendar;
+
+var calendar = new Calendar('#calendar', {
+	defaultView: 'month',
+	taskView: false,
+	week: {
+		startDayOfWeek: 1
+	},
+	month: {
+		startDayOfWeek: 1
+	},
+	template: {
+		monthDayname: function(dayname) {
+			return '<span class="calendar-week-dayname-name">' + dayname.label + '</span>';
+		}
+
+	}
+});
+
+calendar.on('clickSchedule', function(event) {
+	var schedule = event.schedule;
+
+	var d = new GlideModalForm('Pensionsrådgivning', 'x_459524_kalendern_booking'/*, [callback on completion of submit]*/);
+	d.setSysID(schedule.id);
+//	d.setPreference('sysparm_view', 'sys_popup');
+//	d.addParm('k2', '10abf3221b93001035c6fcc8cc4bcbf4');
+	
+	d.setOnloadCallback(function (formObj) {
+		console.log(formObj);
+		formObj.k2 =  k2;
+	});
+	
+	d.render();
+});
+
+for (var i = 0; i < schedule_entries.length; i++) {
+	calendar.createSchedules([schedule_entries[i]]);
+	
+}
+
+setDateRange();
+
+console.log('============================================');
+console.log(schedule_entries);
+console.log('============================================');
+
+function newSchedule() { // ToDo: Make sure calender is refreshed after submit in order to have the new entry shown in the calendar
+	var d = new GlideModalForm('Ny Pensionsrådgivning', 'x_459524_kalendern_booking'/*, [callback on completion of submit]*/);
+	d.setSysID('-1');
+//	d.setPreference('sysparm_view', 'sys_popup');
+	d.addParm('view', 'sys_popup');
+	d.render();
+}
+
+function setDateRange() {
+	switch (calendar.getViewName()) {
+		case 'month':
+		case 'week':
+			document.getElementById("renderRange").innerHTML = monthShortName[calendar.getDateRangeStart().toDate().getMonth()] + ' ' + calendar.getDateRangeStart().toDate().getDate() + ' - ' + monthShortName[calendar.getDateRangeEnd().toDate().getMonth()] + ' ' + calendar.getDateRangeEnd().toDate().getDate();
+			break;
+		case 'day':
+		default:
+			document.getElementById("renderRange").innerHTML = monthShortName[calendar.getDate().toDate().getMonth()] + ' ' + calendar.getDate().toDate().getDate();
+	}
+}]]></client_script>
+        <description>https://nhn.github.io/tui.calendar/latest/Calendar</description>
+        <direct>false</direct>
+        <endpoint>x_459524_kalendern_pension.do</endpoint>
+        <html><![CDATA[<?xml version="1.0" encoding="utf-8" ?>
+<j:jelly trim="false" xmlns:j="jelly:core" xmlns:g="glide" xmlns:j2="null" xmlns:g2="null">
+	<g:evaluate var="jvar_k2">
+		gs.getUrlOnStack().split('?')[1].split('=')[1];
+	</g:evaluate>
+	
+	<g:evaluate var="jvar_schedule_entries">
+		var result = [];
+
+		var gr = new GlideRecord('x_459524_kalendern_booking');
+		gr.addEncodedQuery('state=1');
+		gr._query();
+
+		while (gr._next()) {
+			var startDate = gr.getValue('work_start').replace(' ', 'T');
+
+			var endDate = gr.getValue('work_end').replace(' ', 'T');
+
+			result.push({
+				id: gr.getValue('sys_id'),
+				title: gr.getValue('short_description'),
+				start: startDate + '+00:00',
+				end: endDate + '+00:00'
+			});
+		}
+		
+		result = JSON.stringify(result);
+
+		result;
+	</g:evaluate>
+	
+	<script>
+		var schedule_entries = JSON.parse('${jvar_schedule_entries}');
+		
+		var k2 = '${jvar_k2}';
+	</script>
+
+	<link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.css" />
+
+	<!-- If you use the default popups, use this. -->
+	<link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.css" />
+	<link rel="stylesheet" type="text/css" href="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.css" />
+
+	<script src="https://uicdn.toast.com/tui.code-snippet/latest/tui-code-snippet.js"></script>
+	<script src="https://uicdn.toast.com/tui.dom/v3.0.0/tui-dom.js"></script>
+	<script src="https://uicdn.toast.com/tui.time-picker/latest/tui-time-picker.min.js"></script>
+	<script src="https://uicdn.toast.com/tui.date-picker/latest/tui-date-picker.min.js"></script>
+	<script src="https://uicdn.toast.com/tui-calendar/latest/tui-calendar.js"></script>	
+
+	<h1>KalenderNow</h1>
+	
+	<div id="menu">
+		<span id="menu-navi">
+			<button type="button" class="btn btn-default btn-sm" onclick="calendar.today(); setDateRange();">Today</button>
+			<button type="button" class="btn btn-default btn-sm" onclick="calendar.changeView('month', true); setDateRange();">Month</button>
+			<button type="button" class="btn btn-default btn-sm" onclick="calendar.changeView('week', true); setDateRange();">Week</button>
+			<button type="button" class="btn btn-default btn-sm" onclick="calendar.changeView('day', true); setDateRange();">Day</button>
+			<button type="button" class="btn btn-default btn-sm" onclick="calendar.prev(); setDateRange();">&lt;&lt;</button>
+			<button type="button" class="btn btn-default btn-sm" onclick="calendar.next(); setDateRange();">&gt;&gt;</button>
+		</span>
+		<span id="renderRange" class="render-range" style="margin-left: 10px; margin-right: 10px"></span>
+		<span>
+			<button type="button" class="btn btn-default btn-sm" onclick="newSchedule();">New</button>
+		</span>
+	</div>
+	
+	<div id="calendar" style="height: 800px;"></div>
+</j:jelly>]]></html>
+        <name>pension</name>
+        <processing_script/>
+        <sys_class_name>sys_ui_page</sys_class_name>
+        <sys_created_by>bollar</sys_created_by>
+        <sys_created_on>2020-03-05 15:02:32</sys_created_on>
+        <sys_id>1a8518ba1bd3001035c6fcc8cc4bcbf3</sys_id>
+        <sys_mod_count>16</sys_mod_count>
+        <sys_name>pension</sys_name>
+        <sys_package display_value="KalenderNow" source="x_459524_kalendern">f134bfe21b53001035c6fcc8cc4bcb1d</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="KalenderNow">f134bfe21b53001035c6fcc8cc4bcb1d</sys_scope>
+        <sys_update_name>sys_ui_page_1a8518ba1bd3001035c6fcc8cc4bcbf3</sys_update_name>
+        <sys_updated_by>bollar</sys_updated_by>
+        <sys_updated_on>2020-03-05 16:42:23</sys_updated_on>
+    </sys_ui_page>
+</record_update>

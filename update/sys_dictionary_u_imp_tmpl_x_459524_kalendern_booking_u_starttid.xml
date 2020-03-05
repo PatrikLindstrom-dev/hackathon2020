@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update>
-    <sys_dictionary action="INSERT_OR_UPDATE" element="k2" table="x_459524_kalendern_booking">
+    <sys_dictionary action="INSERT_OR_UPDATE" element="u_starttid" table="u_imp_tmpl_x_459524_kalendern_booking">
         <active>true</active>
         <array>false</array>
         <array_denormalized>false</array_denormalized>
-        <attributes/>
+        <attributes>edge_encryption_enabled=true,import_attribute_name=Starttid</attributes>
         <audit>false</audit>
-        <calculation><![CDATA[(function calculatedFieldValue(current) {
-
-	// Add your code here
-	return '';  // return the calculated value
-
-})(current);]]></calculation>
-        <choice/>
+        <calculation/>
+        <choice>0</choice>
         <choice_field/>
         <choice_table/>
-        <column_label>K2</column_label>
+        <column_label>Starttid</column_label>
         <comments/>
         <create_roles/>
         <default_value/>
@@ -27,20 +22,20 @@
         <dynamic_creation_script/>
         <dynamic_default_value/>
         <dynamic_ref_qual/>
-        <element>k2</element>
+        <element>u_starttid</element>
         <element_reference>false</element_reference>
         <foreign_database/>
         <function_definition/>
         <function_field>false</function_field>
-        <internal_type display_value="Reference">reference</internal_type>
+        <internal_type display_value="">glide_date_time</internal_type>
         <mandatory>false</mandatory>
-        <max_length>32</max_length>
-        <name>x_459524_kalendern_booking</name>
+        <max_length>40</max_length>
+        <name>u_imp_tmpl_x_459524_kalendern_booking</name>
         <next_element/>
         <primary>false</primary>
         <read_only>false</read_only>
         <read_roles/>
-        <reference display_value="" name="x_459524_kalendern_k2">x_459524_kalendern_k2</reference>
+        <reference/>
         <reference_cascade_rule/>
         <reference_floats>false</reference_floats>
         <reference_key/>
@@ -52,16 +47,16 @@
         <staged>false</staged>
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2020-03-05 14:05:44</sys_created_on>
-        <sys_id>3ed8c83e1b93001035c6fcc8cc4bcb0f</sys_id>
-        <sys_mod_count>4</sys_mod_count>
-        <sys_name>K2</sys_name>
+        <sys_created_on>2020-03-05 14:48:54</sys_created_on>
+        <sys_id>8503d03a1bd3001035c6fcc8cc4bcbf9</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Starttid</sys_name>
         <sys_package display_value="KalenderNow" source="x_459524_kalendern">f134bfe21b53001035c6fcc8cc4bcb1d</sys_package>
         <sys_policy/>
         <sys_scope display_value="KalenderNow">f134bfe21b53001035c6fcc8cc4bcb1d</sys_scope>
-        <sys_update_name>sys_dictionary_x_459524_kalendern_booking_k2</sys_update_name>
-        <sys_updated_by>bollar</sys_updated_by>
-        <sys_updated_on>2020-03-05 16:50:48</sys_updated_on>
+        <sys_update_name>sys_dictionary_u_imp_tmpl_x_459524_kalendern_booking_u_starttid</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-05 14:48:54</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
