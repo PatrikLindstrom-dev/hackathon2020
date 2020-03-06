@@ -2,18 +2,18 @@
     <sys_ui_list parent="" relationship="" sys_domain="global" table="x_459524_kalendern_k2" version="2" view="sys_ref_list">
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>fornamn</element>
-            <list_id display_value="x_459524_kalendern_k2" element="NULL" name="x_459524_kalendern_k2" parent="NULL" relationship="NULL" sys_domain="global" view="73570251983100107f2c2ed01a1f16bc">1e61e03a1b17001035c6fcc8cc4bcb23</list_id>
+            <element>namn</element>
+            <list_id display_value="x_459524_kalendern_k2" element="NULL" name="x_459524_kalendern_k2" parent="NULL" relationship="NULL" sys_domain="global" view="73570251983100107f2c2ed01a1f16bc">0dcdb1f21b9b001035c6fcc8cc4bcbd2</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>0</position>
             <sum>false</sum>
             <sys_created_by>bollar</sys_created_by>
-            <sys_created_on>2020-03-05 15:51:47</sys_created_on>
-            <sys_id>da61e03a1b17001035c6fcc8cc4bcb24</sys_id>
+            <sys_created_on>2020-03-05 22:35:17</sys_created_on>
+            <sys_id>05cdb1f21b9b001035c6fcc8cc4bcbd3</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>bollar</sys_updated_by>
-            <sys_updated_on>2020-03-05 15:51:47</sys_updated_on>
+            <sys_updated_on>2020-03-05 22:35:17</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
@@ -27,10 +27,10 @@
             <sum>false</sum>
             <sys_class_name>sys_ui_list</sys_class_name>
             <sys_created_by>bollar</sys_created_by>
-            <sys_created_on>2020-03-05 15:51:47</sys_created_on>
+            <sys_created_on>2020-03-05 22:35:17</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>1e61e03a1b17001035c6fcc8cc4bcb23</sys_id>
+            <sys_id>0dcdb1f21b9b001035c6fcc8cc4bcbd2</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>x_459524_kalendern_k2</sys_name>
             <sys_package display_value="KalenderNow" source="x_459524_kalendern">f134bfe21b53001035c6fcc8cc4bcb1d</sys_package>
@@ -38,7 +38,7 @@
             <sys_scope display_value="KalenderNow">f134bfe21b53001035c6fcc8cc4bcb1d</sys_scope>
             <sys_update_name>sys_ui_list_x_459524_kalendern_k2_sys_ref_list</sys_update_name>
             <sys_updated_by>bollar</sys_updated_by>
-            <sys_updated_on>2020-03-05 15:51:47</sys_updated_on>
+            <sys_updated_on>2020-03-05 22:35:17</sys_updated_on>
             <sys_user/>
             <view display_value="Reference List" name="sys_ref_list">73570251983100107f2c2ed01a1f16bc</view>
             <view_name/>

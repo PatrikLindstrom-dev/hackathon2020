@@ -30,8 +30,9 @@
         <order>100</order>
         <script><![CDATA[current.setValue('state', 2);
 
+
 if (current.getValue('k2') == '') {
-	current.setDisplayValue('k2', gs.getUserID().getDisplayValue('namn'));
+	current.setDisplayValue('k2', gs.getUserID());
 }
 
 current.update();]]></script>
@@ -45,15 +46,15 @@ current.update();]]></script>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>8255e87e1b17001035c6fcc8cc4bcbf7</sys_id>
-        <sys_mod_count>5</sys_mod_count>
+        <sys_mod_count>10</sys_mod_count>
         <sys_name>Boka</sys_name>
         <sys_overrides/>
         <sys_package display_value="KalenderNow" source="x_459524_kalendern">f134bfe21b53001035c6fcc8cc4bcb1d</sys_package>
         <sys_policy/>
         <sys_scope display_value="KalenderNow">f134bfe21b53001035c6fcc8cc4bcb1d</sys_scope>
         <sys_update_name>sys_ui_action_8255e87e1b17001035c6fcc8cc4bcbf7</sys_update_name>
-        <sys_updated_by>waljon</sys_updated_by>
-        <sys_updated_on>2020-03-05 18:18:46</sys_updated_on>
+        <sys_updated_by>bollar</sys_updated_by>
+        <sys_updated_on>2020-03-05 22:55:45</sys_updated_on>
         <table>x_459524_kalendern_booking</table>
         <ui11_compatible>true</ui11_compatible>
         <ui16_compatible>false</ui16_compatible>
